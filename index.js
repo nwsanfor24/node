@@ -8,13 +8,13 @@ inquirer
       name: "username"
     },
     {
-      type: "password",
-      message: "What is your password?",
+      type: "input",
+      message: "What languages do you know?",
       name: "password"
     },
     {
-      type: "password",
-      message: "Re-enter password to confirm:",
+      type: "input",
+      message: "What is your preferred method of communication?",
       name: "confirm"
     }
   ])
