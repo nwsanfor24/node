@@ -1,7 +1,29 @@
-const math = require("./math.js");
+var inquirer = require("inquirer");
 
-const operation = process.argv[2];
+inquirer
+  .prompt([
+    {
+      type: "input",
+      message: "What is your user name?",
+      name: "username"
+    },
+    {
+      type: "password",
+      message: "What is your password?",
+      name: "password"
+    },
+    {
+      type: "password",
+      message: "Re-enter password to confirm:",
+      name: "confirm"
+    }
+  ])
+  .then(function(response) {
 
-var numOne = parseInt(process.argv[3]);
-var numTwo = parseInt(process.argv[4]);
-
+    if (response.confirm === response.password) {
+      console.log("Success!");
+    }
+    else {
+      console.log("You forgot your password already?!");
+    }
+  });
