@@ -1,13 +1,11 @@
-var myArgs = process.argv.slice(2);
-console.log('myArgs ', myArgs);
+var fs = require("fs");
 
-switch (myArgs[0]) {
-    case 'insult':
-        console.log(myArgs[1], 'smells quite badly');
-        break;
-    case 'compliment':
-        console.log(myArgs[1], 'is really cool');
-        break;
-    default:
-        console.log('Sorry, that is not something I know how to do');
-}
+fs.writeFile("log.txt", process.argv[2], function(err) {
+
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log("Success!");
+
+});
